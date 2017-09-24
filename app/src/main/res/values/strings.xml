@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ClickingBad</string>
+    <string name="title_manufacturing">Manufacturing</string>
+    <string name="title_distribution">Distribution</string>
+    <string name="title_store">Store</string>
+    <string name="title_stats">Stats</string>
+</resources>
