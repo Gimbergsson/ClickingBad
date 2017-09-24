@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.free.dennisg.clickingbad.fragments.DistributionFragment;
@@ -17,21 +18,32 @@ import com.free.dennisg.clickingbad.fragments.StatsFragment;
 import com.free.dennisg.clickingbad.fragments.StoreFragment;
 import com.squareup.otto.Bus;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottomNavigationView;
+    @BindView(R.id.meth_per_sec_txt)
+    TextView methPerSec;
     @BindView(R.id.main_view_pager)
     ViewPager viewPager;
+    @BindView(R.id.cook_btn)
+    Button cookButton;
 
     private Unbinder unbinder;
     private Bus eventBus;
     private FragmentManager fragmentManager;
     private MenuItem prevMenuItem;
+    private int mainTicker = 0;
+    private Timer timer;
+    private boolean hasBeenPaused = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,12 +103,50 @@ public class MainActivity extends AppCompatActivity {
         setUpFragments(viewPager);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        startTicker();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        hasBeenPaused = true;
+        stopTicker();
+    }
+
     public void setUpFragments(ViewPager viewPager) {
         MainViewPagerAdapter adapter = new MainViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ManufacturingFragment(), getResources().getString(R.string.title_manufacturing));
         adapter.addFragment(new DistributionFragment(), getResources().getString(R.string.title_distribution));
         adapter.addFragment(new StoreFragment(), getResources().getString(R.string.title_store));
         viewPager.setAdapter(adapter);
+    }
+
+    public void startTicker(){
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                mainTicker++;
+            }
+        }, 1000, 1000);
+    }
+
+    public void stopTicker(){
+        timer.cancel();
+    }
+
+    public int getMainTicker(){
+        return mainTicker;
+    }
+
+    @OnClick(R.id.cook_btn)
+    public void cookOnClick(){
+        methPerSec.setText(String.valueOf(getMainTicker()));
     }
 
 }
