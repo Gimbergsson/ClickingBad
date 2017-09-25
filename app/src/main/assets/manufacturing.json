@@ -1,0 +1,47 @@
+[
+  {
+    "item_id":1,
+    "name":"Storage Shed",
+    "description":"Storage Shed_desc",
+    "cost":1,
+    "risk":1,
+    "purity":1,
+    "cook":1
+  },
+  {
+    "item_id":2,
+    "name":"Used RV",
+    "description":"Used RV_desc",
+    "cost":1,
+    "risk":1,
+    "purity":1,
+    "cook":1
+  },
+  {
+    "item_id":3,
+    "name":"Abandoned Trailer",
+    "description":"Abandoned Trailer_desc",
+    "cost":1,
+    "risk":1,
+    "purity":1,
+    "cook":1
+  },
+  {
+    "item_id":4,
+    "name":"Small House",
+    "description":"Small House_desc",
+    "cost":1,
+    "risk":1,
+    "purity":1,
+    "cook":1
+  },
+  {
+    "item_id":5,
+    "name":"Abandoned Warehouse",
+    "description":"Abandoned Warehouse_desc",
+    "cost":1,
+    "risk":1,
+    "purity":1,
+    "cook":1
+  },
+]
