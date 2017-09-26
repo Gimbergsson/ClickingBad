@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/cash_title_txt"
         android:layout_toEndOf="@+id/cash_title_txt"
-        android:text="0 Bits"/>
+        android:text="0 µ฿"/>
 
     <TextView
         android:id="@+id/purity_value_txt"
