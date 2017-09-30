@@ -1,10 +1,10 @@
 package com.free.dennisg.clickingbad.model;
 
 /**
- * Created by Dennis Gimbergsson on 2017-09-24.
+ * Created by Dennis Gimbergsson on 2017-09-30.
  **/
 
-public class Manufacturing {
+public class Distribution {
 
     private int itemId = 0;
     private String name;
@@ -15,7 +15,7 @@ public class Manufacturing {
     private int cook;
     private int owned;
 
-    public Manufacturing(int itemId, String name, String description, int cost, int risk, int purity, int cook, int owned) {
+    public Distribution(int itemId, String name, String description, int cost, int risk, int purity, int cook, int owned) {
         this.itemId = itemId;
         this.name = name;
         this.description = description;
@@ -23,7 +23,6 @@ public class Manufacturing {
         this.risk = risk;
         this.purity = purity;
         this.cook = cook;
-        this.owned = owned;
     }
 
     public int getItemId() {
@@ -94,7 +93,7 @@ public class Manufacturing {
         return new Builder();
     }
 
-    private Manufacturing(Builder builder){
+    private Distribution(Builder builder){
         this.itemId = builder.itemId;
         this.name = builder.name;
         this.description = builder.description;
@@ -119,15 +118,15 @@ public class Manufacturing {
         public Builder() {
         }
 
-        public Builder(Manufacturing manufacturing) {
-            itemId = manufacturing.getItemId();
-            name = manufacturing.getName();
-            description = manufacturing.getDescription();
-            cost = manufacturing.getCost();
-            risk = manufacturing.getRisk();
-            purity = manufacturing.getPurity();
-            cook = manufacturing.getCook();
-            owned = manufacturing.getOwned();
+        public Builder(Distribution distribution) {
+            itemId = distribution.getItemId();
+            name = distribution.getName();
+            description = distribution.getDescription();
+            cost = distribution.getCost();
+            risk = distribution.getRisk();
+            purity = distribution.getPurity();
+            cook = distribution.getCook();
+            owned = distribution.getOwned();
         }
 
         public Builder itemId(int itemId) {
@@ -170,11 +169,9 @@ public class Manufacturing {
             return this;
         }
 
-        public Manufacturing build() {
-            return new Manufacturing(this);
+        public Distribution build() {
+            return new Distribution(this);
         }
     }
+
 }
-
-
-

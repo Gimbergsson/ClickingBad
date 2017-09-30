@@ -63,8 +63,13 @@ public class ManufacturingFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         manufacturingList = new ArrayList<>();
-        manufacturingList.add(new Manufacturing(1337));
-        manufacturingList.add(new Manufacturing(1338));
+        manufacturingList.add(
+                new Manufacturing(
+                        1337, "1", "2", 3,4, 5, 6, 7)
+        );
+        manufacturingList.add(
+                new Manufacturing(
+                        1338, "1","2",3,4,5,6, 7));
 
         adapter = new ManufacturingAdapter(getContext(), manufacturingList);
         recyclerView.setAdapter(adapter);

@@ -14,7 +14,6 @@ import com.free.dennisg.clickingbad.fragments.DistributionFragment;
 import com.free.dennisg.clickingbad.fragments.ManufacturingFragment;
 import com.free.dennisg.clickingbad.R;
 import com.free.dennisg.clickingbad.adapters.MainViewPagerAdapter;
-import com.free.dennisg.clickingbad.fragments.StatsFragment;
 import com.free.dennisg.clickingbad.fragments.StoreFragment;
 import com.squareup.otto.Bus;
 
