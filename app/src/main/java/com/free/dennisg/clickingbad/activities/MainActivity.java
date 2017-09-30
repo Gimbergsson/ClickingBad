@@ -14,7 +14,7 @@ import com.free.dennisg.clickingbad.fragments.DistributionFragment;
 import com.free.dennisg.clickingbad.fragments.ManufacturingFragment;
 import com.free.dennisg.clickingbad.R;
 import com.free.dennisg.clickingbad.adapters.MainViewPagerAdapter;
-import com.free.dennisg.clickingbad.fragments.StoreFragment;
+import com.free.dennisg.clickingbad.fragments.UpgradesFragment;
 import com.squareup.otto.Bus;
 
 import java.util.Timer;
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         MainViewPagerAdapter adapter = new MainViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ManufacturingFragment(), getResources().getString(R.string.title_manufacturing));
         adapter.addFragment(new DistributionFragment(), getResources().getString(R.string.title_distribution));
-        adapter.addFragment(new StoreFragment(), getResources().getString(R.string.title_store));
+        adapter.addFragment(new UpgradesFragment(), getResources().getString(R.string.title_store));
         viewPager.setAdapter(adapter);
     }
 

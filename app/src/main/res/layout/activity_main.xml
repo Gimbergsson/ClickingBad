@@ -10,6 +10,21 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
     <TextView
         android:id="@+id/meth_title_txt"
         style="@style/TitleTextview"
@@ -55,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/cash_title_txt"
         android:layout_toEndOf="@+id/cash_title_txt"
-        android:text="0 µ฿"/>
+        android:text="0 ฿its"/>
 
     <TextView
         android:id="@+id/purity_value_txt"
