@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    tools:context="com.free.dennisg.clickingbad.activities.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.free.dennisg.clickingbad.activities.MainActivity"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="81dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-    </LinearLayout>
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -23,126 +15,164 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    <TextView
-        android:id="@+id/meth_title_txt"
-        style="@style/TitleTextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="Meth: "/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/cash_title_txt"
-        style="@style/TitleTextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/meth_per_sec_txt"
-        android:layout_below="@+id/meth_title_txt"
-        android:layout_toEndOf="@+id/meth_per_sec_txt"
-        android:text="Money: "/>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="false"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/bitcoin_logo_light"/>
 
-    <TextView
-        android:id="@+id/purity_title_txt"
-        style="@style/TitleTextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/cash_title_txt"
-        android:text="Purity: "/>
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/TitleTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imageView"
+                android:text="0"
+                android:textColor="#85bb65"
+                android:textSize="24sp"/>
 
+        </RelativeLayout>
 
-    <TextView
-        android:id="@+id/meth_per_sec_txt"
-        style="@style/ValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/meth_title_txt"
-        android:layout_toEndOf="@+id/meth_title_txt"
-        android:text="0 Meth/s"/>
+    </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/cash_per_sec_txt"
-        style="@style/ValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cash_title_txt"
-        android:layout_toEndOf="@+id/cash_title_txt"
-        android:text="0 ฿its"/>
-
-    <TextView
-        android:id="@+id/purity_value_txt"
-        style="@style/ValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/purity_title_txt"
-        android:layout_toEndOf="@+id/purity_title_txt"
-        android:text=" 0% pure"/>
-
-    <TextView
-        android:id="@+id/risk_title_txt"
-        style="@style/TitleTextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/purity_value_txt"
-        android:layout_below="@+id/purity_title_txt"
-        android:layout_toEndOf="@+id/purity_value_txt"
-        android:text="Risk: "/>
-
-    <TextView
-        android:id="@+id/risk_value"
-        style="@style/ValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/risk_title_txt"
-        android:layout_toEndOf="@+id/risk_title_txt"
-        android:text="0% chance for a RAID"/>
-
-    <LinearLayout
-        android:id="@+id/button_container"
+    <RelativeLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/risk_value"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/cook_btn"
+        <TextView
+            android:id="@+id/meth_title_txt"
+            style="@style/TitleTextview"
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:text="COOK"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Meth: "/>
 
-        <Button
-            android:id="@+id/sell_btn"
+        <TextView
+            android:id="@+id/cash_title_txt"
+            style="@style/TitleTextview"
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:text="SELL"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/meth_per_sec_txt"
+            android:layout_below="@+id/meth_title_txt"
+            android:layout_toEndOf="@+id/meth_per_sec_txt"
+            android:text="Money: "/>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/main_view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation"
-        android:layout_below="@+id/button_container"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"/>
+        <TextView
+            android:id="@+id/purity_title_txt"
+            style="@style/TitleTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/cash_title_txt"
+            android:text="Purity: "/>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#005500"
-        app:menu="@menu/navigation"
-        app:itemIconTint="#ddd"
-        app:itemTextColor="#ddd"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/meth_per_sec_txt"
+            style="@style/ValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/meth_title_txt"
+            android:layout_toEndOf="@+id/meth_title_txt"
+            android:text="0 Meth/s"/>
+
+        <TextView
+            android:id="@+id/cash_per_sec_txt"
+            style="@style/ValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/cash_title_txt"
+            android:layout_toEndOf="@+id/cash_title_txt"
+            android:text="0 ฿its"/>
+
+        <TextView
+            android:id="@+id/purity_value_txt"
+            style="@style/ValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/purity_title_txt"
+            android:layout_toEndOf="@+id/purity_title_txt"
+            android:text=" 0% pure"/>
+
+        <TextView
+            android:id="@+id/risk_title_txt"
+            style="@style/TitleTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/purity_value_txt"
+            android:layout_below="@+id/purity_title_txt"
+            android:layout_toEndOf="@+id/purity_value_txt"
+            android:text="Risk: "/>
+
+        <TextView
+            android:id="@+id/risk_value"
+            style="@style/ValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/risk_title_txt"
+            android:layout_toEndOf="@+id/risk_title_txt"
+            android:text="0% chance for a RAID"/>
+
+        <LinearLayout
+            android:id="@+id/button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/risk_value"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cook_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="COOK"/>
+
+            <Button
+                android:id="@+id/sell_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="SELL"/>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_navigation"
+            android:layout_below="@+id/button_container"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"/>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#005500"
+            app:menu="@menu/navigation"
+            app:itemIconTint="#ddd"
+            app:itemTextColor="#ddd"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
