@@ -18,29 +18,45 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerInParent="false"
+                android:id="@+id/bitcoin_img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/bitcoin_logo_light"/>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/bitcoin_count"
                 style="@style/TitleTextview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="false"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/imageView"
-                android:text="0"
+                android:layout_toRightOf="@+id/bitcoin_img"
+                android:text="1000000"
                 android:textColor="#85bb65"
+                android:textSize="24sp"
+                app:autoSizeTextType="uniform"/>
+
+            <ImageView
+                android:id="@+id/meth_img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/bitcoin_count"
+                app:srcCompat="@drawable/ic_meth_light"/>
+
+            <TextView
+                android:id="@+id/meth_count"
+                style="@style/TitleTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/meth_img"
+                android:text="1000000"
+                android:textColor="@android:color/holo_blue_light"
                 android:textSize="24sp"/>
 
         </RelativeLayout>
